@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import MerchantComponent from '@Components/Merchant';
 
 import './App.css';
 
@@ -13,6 +14,9 @@ class App extends Component {
                     <h2>Merchants</h2>
                 </div>
                 <div className="App__Content">
+                    { this.props.merchants.map(merchant => (
+                        <MerchantComponent key={ merchant.id } { ...merchant.props() } />
+                    )) }
                 </div>
             </div>
         );
@@ -20,6 +24,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
+    merchants: state.merchants,
 });
 
 export default connect(
