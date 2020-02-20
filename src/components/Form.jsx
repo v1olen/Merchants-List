@@ -9,6 +9,8 @@ import FormField from '@Components/FormField';
 import FormFieldFile from '@Components/FormFieldFile';
 import FormFieldToggle from '@Components/FormFieldToggle';
 
+import { getBids } from '@API/bids';
+
 class Form extends Component {
     constructor(props) {
         super(props);
