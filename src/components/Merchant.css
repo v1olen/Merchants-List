@@ -13,7 +13,7 @@
     transition: .3s;
 }
 .Merchant:hover {
-    background: #171717;
+    background: #10141e;
 }
 .Merchant__Avatar {
     width: 96px;
@@ -38,7 +38,6 @@
     color: #aaa;
 }
 
-
 .Merchant.--Premium::before {
     content: '★';
     position: absolute;
@@ -55,4 +54,31 @@
     font-size: 1.5rem;
     line-height: 1;
     color: #0b0e19;
+    transition: .3s;
+}
+
+.Merchant.--Premium:hover::before {
+    opacity: 0;
+}
+
+.Merchant__Edit {
+    background-color: transparent;
+    border: 0;
+    color: #1b4691;
+    font-size: .75rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0;
+}
+
+.Merchant__Edit {
+    opacity: 0;
+    transition: .3s;
+}
+
+.Merchant:hover .Merchant__Edit {
+    opacity: 1;
+    z-index: 1;
 }

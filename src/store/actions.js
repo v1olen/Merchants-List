@@ -4,3 +4,11 @@ export const addMerchant = merchant => {
         merchant,
     };
 };
+
+export const editMerchant = (id, data) => {
+    return {
+        type: `EDIT_MERCHANT`,
+        id,
+        data,
+    };
+};

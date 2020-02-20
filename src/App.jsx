@@ -6,7 +6,15 @@ import FormComponent from '@Components/Form';
 
 import './App.css';
 
-class App extends Component {
+class App extends Component { 
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            editedMerchant: false,
+        }
+    }
+
     render() {
         return (
             <div className="App">
@@ -17,10 +25,10 @@ class App extends Component {
                 <div className="App__Content">
                     <div className="Merchants">
                         {[...this.props.merchants].reverse().map(merchant => (
-                            <MerchantComponent key={merchant.id} {...merchant.props()} />
+                            <MerchantComponent key={merchant.id} {...merchant.props()} setEditedMerchant={() => this.setState({ editedMerchant: merchant.id })}/>
                         ))}
                     </div>
-                    <FormComponent />
+                    <FormComponent editedMerchant={this.state.editedMerchant} onAddingMode={() => this.setState({ editedMerchant: false })} />
                 </div>
             </div>
         );

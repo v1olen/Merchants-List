@@ -38,4 +38,8 @@ export default class Merchant {
             id, name, email, phone, phoneRaw, hasPremium, bids, avatarUrl
         };
     }
+
+    flat() {
+        return this._data;
+    }
 };
