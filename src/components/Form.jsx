@@ -34,6 +34,7 @@ class Form extends Component {
             `toggleMode`,
             `addMerchant`,
             `editMerchant`,
+            `clearForm`,
             `removeMerchant`,
             `setField`,
         ].forEach(
@@ -175,9 +176,13 @@ class Form extends Component {
                 <div
                     className="Form__Trigger"
                     onClick={
-                        () => this.setState({ 
-                            isVisible: !this.state.isVisible 
-                        })
+                        () => {
+                            this.setState({ 
+                                isVisible: !this.state.isVisible,
+                            });
+                            this.clearForm();
+                            this.props.onAddingMode();
+                        }
                     }
                 >
                     <span className="Form__TriggerIcon">
