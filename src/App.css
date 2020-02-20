@@ -94,3 +94,12 @@
     transform: translate3d(0,0,0);
 }
 
+.Bids__Close {
+    background-color: transparent;
+    border: 0;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}

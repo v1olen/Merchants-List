@@ -10,8 +10,6 @@ import Merchant from '@Classes/Merchant';
 
 const store = configureStore();
 
-
-
 merchantsList.forEach(
   merchant => store.dispatch({
     type: `ADD_MERCHANT`,

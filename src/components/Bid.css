@@ -19,3 +19,8 @@
 .Bid__CreatedDate {
     color: #444;
 }
+.Bids__Heading {
+    margin: 1rem 0 2rem;
+    text-align: left;
+    color: #aaa;
+}

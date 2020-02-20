@@ -26,8 +26,8 @@ class App extends Component {
                 </div>
                 <div className="App__Content">
                     <div className={`Bids ${this.state.chosenMerchant ? '--Visible' : `--Invisible`}`}>
-                        <h2>Bids</h2>
-                        <button type="button" className="Bids__Close" onClick={() => this.setState({ chosenMerchant: false })}>✖</button>
+                        <h2 className="Bids__Heading">Bids</h2>
+                        <button type="button" className="Bids__Close" onClick={() => this.setState({ chosenMerchant: false })}>✕</button>
                         {this.state.chosenMerchant && this.props.merchants
                             .filter(({ id }) => id === this.state.chosenMerchant)[0].bids
                             .sort((bidA, bidB) => bidB.created - bidA.created)
