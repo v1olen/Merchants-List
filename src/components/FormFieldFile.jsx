@@ -25,6 +25,8 @@ export default class FormFieldFile extends Component {
                 value: false,
                 fileStatus: this.statuses.NO_FILE,
             });
+        } else {
+            this.setState({ value: nextProps.value });
         }
     }
 
@@ -63,6 +65,11 @@ export default class FormFieldFile extends Component {
                         this.props.label
                     }
                 </label>
+                {
+                    this.state.value && (
+                        <img src={this.state.value} className="Form__FieldImage" alt=""/>
+                    )
+                }
                 <input
                     className="Form__FieldFileInput"
                     id={

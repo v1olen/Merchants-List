@@ -21,6 +21,8 @@ class FormField extends Component {
                 <label className="Form__FieldLabel" htmlFor={generateID(this.props.modifierClass)}>{this.props.label}</label>
                 <input className="Form__FieldInput" value={this.state.value} id={generateID(this.props.modifierClass)}
                     onInput={({ target }) => this.props.onInput(target.value)} type={this.props.inputType || `text`}
+                    pattern={this.props.pattern}
+                    required
                 />
             </div>
         )

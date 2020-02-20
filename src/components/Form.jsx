@@ -16,6 +16,7 @@ class Form extends Component {
             editMode: this.props.editedMerchant,
             isFileDraggingOn: false,
             isVisible: false,
+            isValid: false,
             fileStatus: `Select or drop a file`,
             data: {
                 firstName: ``,
@@ -76,9 +77,12 @@ class Form extends Component {
     }
 
     addMerchant() {
+        const defaultAvatar = {
+            avatarUrl: `https://eu.ui-avatars.com/api/?name=${this.state.data.firstName}+${this.state.data.lastName}`,
+        };
         this.props.dispatch({
             type: `ADD_MERCHANT`,
-            merchant: new Merchant({ ...this.state.data }),
+            merchant: new Merchant({ ...this.state.data, bids: getBids(), ...(!this.state.data.avatarUrl ? defaultAvatar : {}) }),
         });
         this.props.onAddingMode();
         this.setState({
@@ -87,12 +91,26 @@ class Form extends Component {
         this.clearForm();
     }
 
+    removeMerchant() {
+        const id = this.props.editedMerchant;
+        this.props.onRemove();
+        this.props.dispatch({
+            type: `REMOVE_MERCHANT`,
+            id,
+        });
+        this.toggleMode();
+    }
+
+
     editMerchant() {
+        const defaultAvatar = {
+            avatarUrl: `https://eu.ui-avatars.com/api/?name=${this.state.data.firstName}+${this.state.data.lastName}`,
+        };
         const id = this.props.editedMerchant;
         this.props.dispatch({
             type: `EDIT_MERCHANT`,
             id,
-            data: new Merchant({ ...this.state.data, id }),
+            data: new Merchant({ ...this.state.data, id, ...(!this.state.data.avatarUrl ? defaultAvatar : {}) }),
         });
         
     }
@@ -127,9 +145,15 @@ class Form extends Component {
 
     render() {
         return (
-            <div className={
-                `Form ${this.state.isVisible ? '--Visible' : `--Invisible`} ${this.state.editMode ? `--EditMode` : `--AddMode`}`
-            }>
+            <form
+                className={
+                    `Form ${this.state.isVisible ? '--Visible' : `--Invisible`} ${this.state.editMode ? `--EditMode` : `--AddMode`}`
+                }
+                onSubmit={event => { 
+                    event.preventDefault();
+                    this.state.editMode ? this.editMerchant() : this.addMerchant();
+                }}
+            >
                 <h3 className="Form__Heading">
                     {
                         this.state.editMode ? 
@@ -167,6 +191,7 @@ class Form extends Component {
                     onInput={
                         value => this.setField(`firstName`, value)
                     }
+                    pattern="\D+"
                 />
                 <FormField
                     label="Last name"
@@ -177,6 +202,7 @@ class Form extends Component {
                     onInput={
                         value => this.setField(`lastName`, value)
                     }
+                    pattern="\D+"
                 />
                 <FormFieldFile
                     label="Avatar"
@@ -219,14 +245,13 @@ class Form extends Component {
                     onInput={
                         value => this.setField(`phone`, value)
                     }
+                    pattern="\+\d+"
                 />
                 {
                     this.state.editMode ? (
                         <button
                             className="Form__Button --Submit"
-                            onClick={
-                                this.editMerchant
-                            }
+                            type="submit"
                         >
                             Edit merchant
                         </button>
@@ -251,7 +276,7 @@ class Form extends Component {
                         </button>
                     )
                 }
-            </div>
+            </form>
         );
     }
 };

@@ -149,6 +149,7 @@
     color: #aaa;
     border-radius: 4px;
     padding: 0.5rem;
+    box-shadow: none;
 }
 
 .Form__Field.--Avatar.--IsFileDraggingOn::before {
@@ -189,4 +190,21 @@
 
 .Form__FieldButton:last-of-type {
     border-radius: 0 .25rem .25rem 0;
+}
+
+.--EditMode .Form__Field.--Avatar::before {
+    left: 5rem;
+    width: calc(100% - 5rem);
+}
+
+.--EditMode .Form__FieldImage {
+    position: absolute;
+    left: 0;
+    width: 4rem;
+    top: 1.75rem;
+    border-radius: .125rem;
+}
+
+.--AddMode .Form__FieldImage {
+    display: none;
 }

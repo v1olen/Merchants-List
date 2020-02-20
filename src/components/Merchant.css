@@ -11,6 +11,7 @@
     cursor: pointer;
     transform: scale(1);
     transition: .3s;
+    height: 10.5rem;
 }
 .Merchant:hover {
     background: #10141e;
