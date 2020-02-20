@@ -248,6 +248,7 @@ class Form extends Component {
                         value => this.setField(`phone`, value)
                     }
                     pattern="\+\d+"
+                    minLength="8"
                 />
                 {
                     this.state.editMode ? (

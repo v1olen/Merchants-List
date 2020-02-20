@@ -112,11 +112,9 @@
     position: absolute;
     top: 1rem;
     pointer-events: none;
-    color: #eee;
     border-radius: .25rem;
     border: 4px #06070f dashed;
     cursor: pointer;
-    font-size: 11px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -172,6 +170,7 @@
     line-height: 39px;
     cursor: pointer;
 }
+
 .Form__FieldButton:first-of-type {
     border-radius: .25rem 0 0 .25rem;
 }

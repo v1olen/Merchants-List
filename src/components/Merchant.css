@@ -13,26 +13,31 @@
     transition: .3s;
     height: 10.5rem;
 }
+
 .Merchant:hover {
     background: #10141e;
 }
+
 .Merchant__Avatar {
     width: 96px;
     height: 96px;
     border-radius: 50%;
     grid-area: avatar;
 }
+
 .Merchant__Email {
     grid-area: email;
     font-size: 14px;
     color: #444;
 }
+
 .Merchant__Phone {
     grid-area: phone;
     justify-self: self-end;
     font-size: 14px;
     color: #444;
 }
+
 .Merchant__Name {
     grid-area: name;
     align-self: center;

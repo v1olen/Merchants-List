@@ -23,6 +23,7 @@ class FormField extends Component {
                     onInput={({ target }) => this.props.onInput(target.value)} type={this.props.inputType || `text`}
                     pattern={this.props.pattern}
                     required
+                    {...(this.props.minLength ? {minLength: this.props.minLength} : {})}
                 />
             </div>
         )

@@ -26,7 +26,8 @@ export default class Merchant {
     }
 
     get phone() {
-        return parsePhoneNumberFromString(this._data.phone).formatInternational();
+        const formattedPhone = parsePhoneNumberFromString(this._data.phone);
+        return formattedPhone ? formattedPhone.formatInternational() : this._data.phone;
     }
 
     get bids() {
