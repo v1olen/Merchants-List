@@ -31,6 +31,7 @@ class Form extends Component {
             `toggleMode`,
             `addMerchant`,
             `editMerchant`,
+            `removeMerchant`,
             `setField`,
         ].forEach(
             functionName =>
@@ -232,11 +233,21 @@ class Form extends Component {
                     ) : (
                         <button
                             className="Form__Button --Submit"
-                            onClick={
-                                this.addMerchant
-                            }
+                            type="submit"
                         >
                             Add a merchant
+                        </button>
+                    )
+                }
+                {
+                    this.state.editMode && (
+                        <button
+                            className="Form__Button --Remove"
+                            onClick={
+                                this.removeMerchant
+                            }
+                        >
+                            Remove merchant
                         </button>
                     )
                 }

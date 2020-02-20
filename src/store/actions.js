@@ -12,3 +12,11 @@ export const editMerchant = (id, data) => {
         data,
     };
 };
+
+export const removeMerchant = id => {
+    return {
+        type: `REMOVE_MERCHANT`,
+        id,
+    };
+};
+

@@ -56,6 +56,7 @@ class App extends Component {
                     <FormComponent
                         editedMerchant={this.state.editedMerchant}
                         onAddingMode={() => this.setState({ editedMerchant: false })}
+                        onRemove={() => this.setState({ chosenMerchant: false })}
                     />
                 </div>
             </div>

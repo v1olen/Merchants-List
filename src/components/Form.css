@@ -7,8 +7,9 @@
         "avatar avatar"
         "subscription subscription"
         ". ."
-        "submit submit";
-    grid-template-rows: repeat(2, 3.5rem) 6.25rem 3.5rem repeat(2, 3.5rem);
+        "submit submit"
+        "remove remove";
+    grid-template-rows: repeat(2, 3.5rem) 6.25rem repeat(2, 3.5rem) 3rem;
     color: #aaa;
     text-align: left;
     padding: 2rem;
@@ -93,6 +94,13 @@
 .Form__Button.--Submit {
     height: 2rem;
     grid-area: submit;
+}
+
+.Form__Button.--Remove {
+    height: 2rem;
+    margin-top: 0;
+    grid-area: remove;
+    background: #931b1b;
 }
 
 .Form__Field.--Avatar::before {
