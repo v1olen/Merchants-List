@@ -1,0 +1,21 @@
+.Bid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    background: #06070f;
+    border-radius: .25rem;
+}
+
+.Bid + .Bid {
+    margin-top: 1rem;
+}
+
+.Bid__Title {
+    margin: 0;
+    color: #aaa;
+}
+
+.Bid__CreatedDate {
+    color: #444;
+}

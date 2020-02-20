@@ -73,3 +73,24 @@
     transform: scale(1);
   }
 }
+
+.Bids {
+    height: calc(100vh - 2rem);
+    position: sticky;
+    right: 0;
+    top: 1rem;
+    background: rgb(11, 14, 25);
+    margin-top: 1rem;
+    transition: .3s;
+    color: #eee;
+    padding: 1rem;
+}
+
+.Bids.--Invisible {
+    transform: translate3d(-100%,0,0);
+}
+
+.Bids.--Visible {
+    transform: translate3d(0,0,0);
+}
+

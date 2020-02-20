@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import MerchantComponent from '@Components/Merchant';
 import FormComponent from '@Components/Form';
+import BidComponent from '@Components/Bid';
 
 import './App.css';
 
@@ -12,6 +13,7 @@ class App extends Component {
     
         this.state = {
             editedMerchant: false,
+            chosenMerchant: false,
         }
     }
 
@@ -23,12 +25,38 @@ class App extends Component {
                     <h2>Merchants</h2>
                 </div>
                 <div className="App__Content">
+                    <div className={`Bids ${this.state.chosenMerchant ? '--Visible' : `--Invisible`}`}>
+                        <h2>Bids</h2>
+                        <button type="button" className="Bids__Close" onClick={() => this.setState({ chosenMerchant: false })}>✖</button>
+                        {this.state.chosenMerchant && this.props.merchants
+                            .filter(({ id }) => id === this.state.chosenMerchant)[0].bids
+                            .sort((bidA, bidB) => bidB.created - bidA.created)
+                            .map(bid => (
+                                <BidComponent
+                                    key={
+                                        bid.id
+                                    }
+                                    {...bid.props()}
+                                />
+                            ))
+                        }
+                    </div>
                     <div className="Merchants">
                         {[...this.props.merchants].reverse().map(merchant => (
-                            <MerchantComponent key={merchant.id} {...merchant.props()} setEditedMerchant={() => this.setState({ editedMerchant: merchant.id })}/>
+                            <MerchantComponent
+                                key={merchant.id}
+                                {...merchant.props()}
+                                onClick={() => this.setState({ chosenMerchant: merchant.id })}
+                                setEditedMerchant={event => {
+                                    this.setState({ editedMerchant: merchant.id })
+                                }}
+                            />
                         ))}
                     </div>
-                    <FormComponent editedMerchant={this.state.editedMerchant} onAddingMode={() => this.setState({ editedMerchant: false })} />
+                    <FormComponent
+                        editedMerchant={this.state.editedMerchant}
+                        onAddingMode={() => this.setState({ editedMerchant: false })}
+                    />
                 </div>
             </div>
         );

@@ -41,6 +41,10 @@ class Form extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.editedMerchant && nextProps.editedMerchant !== this.state.editMode) {
             this.initEditMode(nextProps.editedMerchant);
+        } else if (nextProps.editedMerchant) {
+            this.setState({
+                isVisible: true,
+            });
         }
     }
 

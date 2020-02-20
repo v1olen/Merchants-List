@@ -1,3 +1,5 @@
+import Bid from "@Classes/Bid";
+
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 export default class Merchant {
@@ -25,6 +27,10 @@ export default class Merchant {
 
     get phone() {
         return parsePhoneNumberFromString(this._data.phone).formatInternational();
+    }
+
+    get bids() {
+        return this._data.bids.map(data => new Bid(data));
     }
 
     props() {

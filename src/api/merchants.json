@@ -7,7 +7,23 @@
         "email": "jan.kowalski@example.com",
         "phone": "+48123456789",
         "hasPremium": true,
-        "bids": []
+        "bids": [
+            {
+                "id": "313",
+                "carTitle": "Audi A4",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "318",
+                "carTitle": "Lamborghini Gallardo",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "353",
+                "carTitle": "Lexus CT 200h",
+                "created": "2020-01-18T12:09:08.176Z"
+            }
+        ]
     },
     {
         "id": "1",
@@ -17,7 +33,23 @@
         "email": "adam.nowak@example.com",
         "phone": "+48123456953",
         "hasPremium": false,
-        "bids": []
+        "bids": [
+            {
+                "id": "452",
+                "carTitle": "Toyota Avensis",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "644",
+                "carTitle": "Fiat Tipo",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "745",
+                "carTitle": "BMW E46",
+                "created": "2020-01-18T12:09:08.176Z"
+            }
+        ]
     },
     {
         "id": "2",
@@ -27,7 +59,23 @@
         "email": "franciszek.haduch@example.com",
         "phone": "+48123387789",
         "hasPremium": false,
-        "bids": []
+        "bids": [
+            {
+                "id": "346",
+                "carTitle": "Ford Focus",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "577",
+                "carTitle": "Toyota Hilux",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "643",
+                "carTitle": "Toyota Corolla",
+                "created": "2020-01-18T12:09:08.176Z"
+            }
+        ]
     },
     {
         "id": "3",
@@ -37,7 +85,23 @@
         "email": "seba.rakowski@example.com",
         "phone": "+48123321789",
         "hasPremium": true,
-        "bids": []
+        "bids": [
+            {
+                "id": "978",
+                "carTitle": "Honda CRV",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "578",
+                "carTitle": "Ford Mondeo",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "680",
+                "carTitle": "Ford Fusion",
+                "created": "2020-01-18T12:09:08.176Z"
+            }
+        ]
     },
     {
         "id": "4",
@@ -47,7 +111,23 @@
         "email": "asia.czapla@example.com",
         "phone": "+48123964789",
         "hasPremium": true,
-        "bids": []
+        "bids": [
+            {
+                "id": "743",
+                "carTitle": "Audi A3",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "932",
+                "carTitle": "Toyota Yaris",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "239",
+                "carTitle": "Bugatti Veyron",
+                "created": "2020-01-18T12:09:08.176Z"
+            }
+        ]
     },
     {
         "id": "5",
@@ -57,6 +137,22 @@
         "email": "ewa.kowalska@example.com",
         "phone": "+48123546789",
         "hasPremium": false,
-        "bids": []
+        "bids": [
+            {
+                "id": "843",
+                "carTitle": "Pagani Zonda",
+                "created": "2020-01-18T12:09:08.176Z"
+            },
+            {
+                "id": "349",
+                "carTitle": "Honda Civic",
+                "created": "2020-01-26T14:05:26.456Z"
+            },
+            {
+                "id": "295",
+                "carTitle": "Volkswagen Polo",
+                "created": "2020-01-18T12:09:08.176Z"
+            }
+        ]
     }
 ]
