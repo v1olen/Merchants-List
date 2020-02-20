@@ -54,6 +54,10 @@ class Form extends Component {
     }
 
     initEditMode(id) {
+        const merchant = this.props.merchants.filter(
+            merchant => merchant.id === id
+        );
+        if (!merchant.length) return;
         const {
             firstName,
             lastName,
@@ -61,9 +65,7 @@ class Form extends Component {
             email,
             phone,
             hasPremium,
-        } = this.props.merchants.filter(
-            merchant => merchant.id === id
-        )[0].flat();
+        } = merchant[0].flat();
 
         this.setState({
             isVisible: true,

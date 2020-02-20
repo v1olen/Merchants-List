@@ -48,8 +48,8 @@
 
 .Merchants {
     grid-area: merchants;
-    gap: 1rem;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
 }
 
