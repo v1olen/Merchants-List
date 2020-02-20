@@ -15,10 +15,42 @@
   height: 150px;
   padding: 20px;
   color: white;
+  box-sizing: content-box;
+}
+
+.App__Header * {
+  box-sizing: content-box;
+}
+
+.App__Header h2 {
+  margin: .75rem;
 }
 
 .App__Intro {
   font-size: large;
+}
+
+.App__Content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". merchants form";
+}
+
+.Form {
+  height: calc(100vh - 2rem);
+  position: sticky;
+  right: 0;
+  top: 1rem;
+  background: #0b0e19;
+  grid-area: form;
+  margin-top: 1rem;
+}
+
+.Merchants {
+  grid-area: merchants;
+  gap: 1rem;
+  display: grid;
+  padding: 1rem;
 }
 
 @keyframes App-logo-appearance {

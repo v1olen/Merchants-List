@@ -1,0 +1,58 @@
+.Merchant {
+    display: grid;
+    background: #0b0e19;
+    grid-template-columns: 8rem 1fr 1fr;
+    grid-template-rows: 1fr 2.5rem;
+    grid-template-areas: "avatar name name" "email email phone";
+    border-radius: 4px;
+    padding: 1rem;
+    justify-items: self-start;
+    align-items: self-end;
+    cursor: pointer;
+    transform: scale(1);
+    transition: .3s;
+}
+.Merchant:hover {
+    background: #171717;
+}
+.Merchant__Avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    grid-area: avatar;
+}
+.Merchant__Email {
+    grid-area: email;
+    font-size: 14px;
+    color: #444;
+}
+.Merchant__Phone {
+    grid-area: phone;
+    justify-self: self-end;
+    font-size: 14px;
+    color: #444;
+}
+.Merchant__Name {
+    grid-area: name;
+    align-self: center;
+    color: #aaa;
+}
+
+
+.Merchant.--Premium::before {
+    content: '★';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 0;
+    right: 0;
+    border: 2rem solid;
+    border-color: #f6852a #f6852a transparent transparent;
+    display: flex;
+    align-items: flex-end;
+    text-indent: 3px;
+    transform: translate3d(1px, -2px, 0);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #0b0e19;
+}

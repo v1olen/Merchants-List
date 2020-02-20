@@ -15,9 +15,11 @@ class App extends Component {
                     <h2>Merchants</h2>
                 </div>
                 <div className="App__Content">
-                    { this.props.merchants.map(merchant => (
-                        <MerchantComponent key={ merchant.id } { ...merchant.props() } />
-                    )) }
+                    <div className="Merchants">
+                        {[...this.props.merchants].reverse().map(merchant => (
+                            <MerchantComponent key={merchant.id} {...merchant.props()} />
+                        ))}
+                    </div>
                     <FormComponent />
                 </div>
             </div>
