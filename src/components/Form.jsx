@@ -27,6 +27,7 @@ class Form extends Component {
                 email: ``,
                 phone: ``,
                 hasPremium: false,
+                bids: [],
             },
         };
         
@@ -65,6 +66,7 @@ class Form extends Component {
             email,
             phone,
             hasPremium,
+            bids,
         } = merchant[0].flat();
 
         this.setState({
@@ -76,7 +78,8 @@ class Form extends Component {
                 avatarUrl,
                 email,
                 phone,
-                hasPremium
+                hasPremium,
+                bids,
             },
         });
     }
