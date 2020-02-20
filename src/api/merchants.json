@@ -5,8 +5,8 @@
         "lastName": "Kowalski",
         "avatarUrl": "https://randomuser.me/api/portraits/thumb/men/70.jpg",
         "email": "jan.kowalski@example.com",
-        "phone": "+48 123 456 789 0",
         "hasPremium": false,
+        "phone": "+48123456789",
         "bids": []
     },
     {
@@ -15,7 +15,7 @@
         "lastName": "Nowak",
         "avatarUrl": "https://randomuser.me/api/portraits/thumb/men/71.jpg",
         "email": "adam.nowak@example.com",
-        "phone": "+48 123 456 953 0",
+        "phone": "+48123456953",
         "hasPremium": false,
         "bids": []
     },
@@ -25,7 +25,7 @@
         "lastName": "Haduch",
         "avatarUrl": "https://randomuser.me/api/portraits/thumb/men/63.jpg",
         "email": "franciszek.haduch@example.com",
-        "phone": "+48 123 387 789 0",
+        "phone": "+48123387789",
         "hasPremium": false,
         "bids": []
     },
@@ -35,8 +35,8 @@
         "lastName": "Rakowski",
         "avatarUrl": "https://randomuser.me/api/portraits/thumb/men/45.jpg",
         "email": "seba.rakowski@example.com",
-        "phone": "+48 123 321 789 0",
         "hasPremium": false,
+        "phone": "+48123321789",
         "bids": []
     },
     {
@@ -45,8 +45,8 @@
         "lastName": "Czapla",
         "avatarUrl": "https://randomuser.me/api/portraits/thumb/women/72.jpg",
         "email": "asia.czapla@example.com",
-        "phone": "+48 123 964 789 0",
         "hasPremium": false,
+        "phone": "+48123964789",
         "bids": []
     },
     {
@@ -55,7 +55,7 @@
         "lastName": "Kowalska",
         "avatarUrl": "https://randomuser.me/api/portraits/thumb/women/69.jpg",
         "email": "ewa.kowalska@example.com",
-        "phone": "+48 123 546 789 0",
+        "phone": "+48123546789",
         "hasPremium": false,
         "bids": []
     }

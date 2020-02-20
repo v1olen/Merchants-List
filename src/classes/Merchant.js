@@ -1,3 +1,5 @@
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
+
 export default class Merchant {
     constructor(data) {
         this._data = {
@@ -21,14 +23,19 @@ export default class Merchant {
         return `${this._data.firstName} ${this._data.lastName}`;
     }
 
+    get phone() {
+        return parsePhoneNumberFromString(this._data.phone).formatInternational();
+    }
+
     props() {
         const { 
             id, 
-            name, 
-            _data: { email, phone, hasPremium, bids, avatarUrl },
+            name,
+            phone,
+            _data: { email, phone: phoneRaw, hasPremium, bids, avatarUrl },
         } = this;
         return {
-            id, name, email, phone, hasPremium, bids, avatarUrl
+            id, name, email, phone, phoneRaw, hasPremium, bids, avatarUrl
         };
     }
 };
