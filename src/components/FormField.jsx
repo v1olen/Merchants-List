@@ -11,8 +11,8 @@ class FormField extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({ value: nextProps.value })
+    componentDidUpdate(prevProps) {
+        prevProps.value !== this.props.value && this.setState({ value: this.props.value })
     }
 
     render() {

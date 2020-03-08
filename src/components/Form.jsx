@@ -44,10 +44,10 @@ class Form extends Component {
         );
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.editedMerchant && nextProps.editedMerchant !== this.state.editMode) {
-            this.initEditMode(nextProps.editedMerchant);
-        } else if (nextProps.editedMerchant) {
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.editedMerchant && this.props.editedMerchant !== prevState.editMode && this.props.editedMerchant !== prevProps.editedMerchant) {
+            this.initEditMode(this.props.editedMerchant);
+        } else if (this.props.editedMerchant && this.props.editedMerchant !== prevProps.editedMerchant) {
             this.setState({
                 isVisible: true,
             });

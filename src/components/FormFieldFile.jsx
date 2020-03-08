@@ -19,14 +19,14 @@ export default class FormFieldFile extends Component {
         this.processFile = this.processFile.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (!nextProps.value) {
-            this.setState({
+    componentDidUpdate(prevProps) {
+        if (!this.props.value) {
+            this.props.editedMerchant !== prevProps.editedMerchant && this.setState({
                 value: false,
                 fileStatus: this.statuses.NO_FILE,
             });
         } else {
-            this.setState({ value: nextProps.value });
+            prevProps.value !== this.props.value && this.setState({ value: this.props.value });
         }
     }
 
